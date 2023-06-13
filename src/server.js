@@ -2,13 +2,13 @@ import './db/db.js';
 import express from 'express';
 import productsRouter from './routes/products.router.js'
 import cartRouter from './routes/cart.router.js'
-import { errorHandler } from '../middlewares/errorHandler.js';
+
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(errorHandler);
+
 
 app.use('/products', productsRouter);
 app.use('/cart', cartRouter);
